@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>daginge.com</title>
+    <meta name="viewport" content="width=950, initial-scale=1">
+    <meta charset="utf-8" />
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-7814313-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+</script>
+<%= csrf_meta_tags %>
+   </head>
+   <body>
+     <header>
+     <h1 id="header">daginge.com</h1>
+     <ul>
+       <li><a href="/">Information</a></li>
+       <li><a id="whereami" href="#where_am_i">Where am I?</a></li>
+     </ul>
+     </header>
+
+
+     <div class="container top">
+       <div class="span-16">
+         <%= yield %>
+       </div>
+       <div class="span-8 last">
+         <div id="position" class="hide widget">
+           <h1>You are here ↓</h1> 
+         </div>
+         <%= yield :sidebar %>
+       </div>
+       <footer class="span-24">
+       <p class="quiet">Page built by Dag-Inge Aas using HTML5, CSS3, Compass, Blueprint, SASS and jQuery. Special thanks to famfamfam for Silk Icons and fontsquirrel for custom font. Design and colors by Dag-Inge Aas. Validates <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdaginge.com%2F">HTML5</a>. This project on <a href="https://github.com/dagingaa/daginge-home">GitHub</a>.</p>
+       </footer>
+     </body>
+   </html>
