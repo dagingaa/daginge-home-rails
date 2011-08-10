@@ -1,0 +1,8 @@
+<div class="action-menu">
+<%= link_to 'Show', @job, confirm: 'This will cancel all changes. Are you sure?', method: :get, :class => :button %>
+<%= link_to 'Back', jobs_path, confirm: 'This will cancel all changes. Are you sure?', method: :get, :class => :button  %>
+</div>
+<h1>Editing job</h1>
+
+<%= render 'form' %>
+

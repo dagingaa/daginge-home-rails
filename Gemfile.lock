@@ -96,6 +96,7 @@ GEM
       thor (~> 0.14.6)
     rake (0.9.2)
     rdoc (3.9.1)
+    redcarpet (1.17.2)
     sass (3.1.7)
     sass-rails (3.1.0.rc.5)
       actionpack (~> 3.1.0.rc1)
@@ -127,6 +128,7 @@ DEPENDENCIES
   compass!
   jquery-rails
   rails (= 3.1.0.rc5)
+  redcarpet
   sass-rails (~> 3.1.0.rc)
   sqlite3
   turn

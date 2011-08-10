@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  employer: MyString
+  homepage: MyString
+  from: 2011-08-09
+  to: 2011-08-09
+  title_no: MyString
+  title_en: MyString
+  description_no: MyText
+  description_en: MyText
+
+two:
+  employer: MyString
+  homepage: MyString
+  from: 2011-08-09
+  to: 2011-08-09
+  title_no: MyString
+  title_en: MyString
+  description_no: MyText
+  description_en: MyText

@@ -1,0 +1,25 @@
+<%%= form_for(@<%= singular_table_name %>, :html => { :class => "yform columnar" }) do |f| %>
+  <%% if @<%= singular_table_name %>.errors.any? %>
+  <div id="error_explanation" class="error">
+    <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+    <ul>
+      <%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
+        <li><%%= msg %></li>
+        <%% end %>
+      </ul>
+    </div>
+    <%% end %>
+    <fieldset>
+      <legend><%= singular_table_name %></legend>
+      <% attributes.each do |attribute| -%>
+        <div class="type-<%= attribute.field_type %>">
+          <%%= f.label :<%= attribute.name %> %><br />
+          <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+        </div>
+      <% end -%>
+    </fieldset>
+      <div class="type-button">
+        <%%= f.submit :class => "submit" %>
+      </div>
+    <%% end %>

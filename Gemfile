@@ -9,6 +9,9 @@ gem 'sqlite3'
 #gem 'compass', :require => false
 gem 'compass', git: 'https://github.com/chriseppstein/compass.git', branch: 'rails31'
 
+# Syntax and markdown
+gem 'redcarpet'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

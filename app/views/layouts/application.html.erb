@@ -18,8 +18,8 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
 
-</script>
-<%= csrf_meta_tags %>
+     </script>
+     <%= csrf_meta_tags %>
    </head>
    <body>
      <header>
@@ -33,7 +33,9 @@
 
      <div class="container top">
        <div class="span-16">
-         <%= yield %>
+         <div class="post">
+           <%= yield %>
+         </div>
        </div>
        <div class="span-8 last">
          <div id="position" class="hide widget">

@@ -1,0 +1,17 @@
+<h1>Log in</h1>  
+
+<%= form_tag sessions_authenticate_path do %>  
+  <div class="type-text">  
+    <%= label_tag :email %>  
+    <%= text_field_tag :email, params[:email] %>  
+  </div>  
+  <div class="type-text">  
+    <%= label_tag :password %>  
+    <%= password_field_tag :password %>  
+  </div>  
+  <div class="type-checkbox">
+    <%= label_tag :remember_me %>
+    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+  </div>
+  <div class="type-button"><%= submit_tag "Log in", :class => "submit" %></div>  
+<% end %>  

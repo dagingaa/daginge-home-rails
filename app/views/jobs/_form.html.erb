@@ -1,0 +1,57 @@
+<%= form_for(@job, :html => { :class => "yform columnar" }) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation" class="error">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend><%= t('common') %></legend>
+    <div class="type-text_field">
+      <%= f.label :employer %><br />
+      <%= f.text_field :employer %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :homepage %><br />
+      <%= f.text_field :homepage %>
+    </div>
+    <div class="type-date_select">
+      <%= f.label :from %><br />
+      <%= f.date_select :from %>
+    </div>
+    <div class="type-date_select">
+      <%= f.label :to %><br />
+      <%= f.date_select :to %>
+      <%= f.label :still_employed %>
+      <%= f.check_box :still_employed %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Norwegian</legend>
+    <div class="type-text_field">
+      <%= f.label :title_no %><br />
+      <%= f.text_field :title_no %>
+    </div>
+    <div class="type-text_area">
+      <%= f.label :description_no %><br />
+      <%= f.text_area :description_no %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>English</legend>
+    <div class="type-text_field">
+      <%= f.label :title_en %><br />
+      <%= f.text_field :title_en %>
+    </div>
+    <div class="type-text_area">
+      <%= f.label :description_en %><br />
+      <%= f.text_area :description_en %>
+    </div>
+  </fieldset>
+  <%= f.submit :class => "primary positive button" %>
+<% end %>

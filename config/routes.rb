@@ -1,4 +1,16 @@
 DagingeHomeRails::Application.routes.draw do
+  resources :jobs
+
+  post "users" => "user#create"
+
+  get "user/new"
+
+  get "sessions/login"
+
+  post "sessions/authenticate"
+
+  get "sessions/destroy"
+
   get "home/index"
   root :to => 'home#index'
 

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @job.employer %> - <%= @job.title_en %></h1>
+<div class="action-menu">
+  <%= link_to 'Edit', edit_job_path(@job), :class => "button" %>
+  <%= link_to 'Back', jobs_path, :class => "button" %>
+</div>
+
+<p class="quiet"><%= link_to @job.homepage, @job.homepage %><br><%= @job.from %> - <%= @job.to %></p>
+
+<p>
+<p>
+<h6>Description:</h6>
+<p>
+<%= @job.description_en %>
+</p>
+
+
