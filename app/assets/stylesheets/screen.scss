@@ -140,6 +140,14 @@ div.center {
   text-align: center;
 }
 
+div.right {
+  margin-right: 0px;
+  text-align: right;
+}
+
+div.action-menu {
+  margin-bottom: 1em;
+}
 img.fancy {
   
 }
@@ -166,4 +174,14 @@ div.hoverable {
     cursor: pointer;
   }
 }
-                                           
+
+div.item {
+  background-color: darken(white, 8%);
+  padding: 1.0em;
+  @include border-radius(5px);
+  margin: 0.5em 0;
+}
+
+div.action-menu {
+  float:right;
+}
