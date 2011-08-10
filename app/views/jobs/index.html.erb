@@ -11,7 +11,7 @@
     </div>
 
     <h6><%= job.employer %> <%= link_to image_tag("icons/house_link.png", :alt => "Homepage"), job.homepage %></h6>
-    <p><%= job.from %> - <%= job.to.nil? ? "Now":job.to %><br><%= job.title_en %></p>
+    <p><%= job.from %> - <%= job.still_employed ? "Now":job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
   </div>
 <% end %>
 </table>

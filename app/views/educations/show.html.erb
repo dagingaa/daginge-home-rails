@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<div class="action-menu">
+<%= link_to 'Edit', edit_education_path(@education), :class => "button" %>
+<%= link_to 'Back', educations_path, :class => "button" %>
+</div>
+<h6><%= @education.school %> - <%= @education.degree_en %></h6>
+  <p>
+  <b>Homepage:</b>
+  <%= @education.homepage %>
+  </p>
+
+  <p>
+  <b>From:</b>
+  <%= @education.from %>
+  </p>
+
+  <p>
+  <b>To:</b>
+  <%= @education.to %>
+  </p>
+
+  <p>
+  <b>Still student:</b>
+  <%= @education.still_student %>
+  </p>
+
+  <p>
+  <b>Degree no:</b>
+  <%= @education.degree_no %>
+  </p>
+
+  <p>
+  <b>Description no:</b>
+  <%= @education.description_no %>
+  </p>
+
+  <p>
+  <b>Degree en:</b>
+  <%= @education.degree_en %>
+  </p>
+
+  <p>
+  <b>Description en:</b>
+  <%= @education.description_en %>
+  </p>
+
+

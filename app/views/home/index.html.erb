@@ -15,7 +15,7 @@ I am a Computer Science Major at the Norwegian University of Science and Technol
       <td>
         <% @jobs.each do |job| %>
           <div class="hoverable">
-            <h6><%= job.employer %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), job.homepage %></a></h6>
+            <h6><%= job.employer %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), job.homepage %></h6>
           <p><%= job.from.strftime("%b %Y") %> - <%= job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
           <p class="hideable hide"><%= format(job.description_en) %></p>
         </div>
@@ -25,11 +25,13 @@ I am a Computer Science Major at the Norwegian University of Science and Technol
   <tr>
     <th>Education</th>
     <td>
+      <% @educations.each do |education| %>
       <div class="hoverable">
-        <h6>Norwegian University of Science and Technology <a href="http://www.ntnu.no"><img src="images/icons/house_link.png" alt="link"></a></h6>
-        <p>2008 - Now<br>4th grade Computer Science</p>
-        <p class="hideable hide">Masters degree with focus on programming and information systems. Currently in 4th year with main focus on web applications, security, server administration and information systems development.</p>
+        <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), education.homepage %></h6>
+        <p><%= education.from.strftime("%Y")%> - <%= education.still_student ? "Now":education.to.strftime("%Y") %><br><%= education.degree_en %></p>
+        <p class="hideable hide"><%= education.description_en %></p>
       </div>
+    <% end %>
     </td>
   </tr>
   <tr>

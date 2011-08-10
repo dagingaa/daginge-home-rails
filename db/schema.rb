@@ -10,7 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110810130125) do
+ActiveRecord::Schema.define(:version => 20110810135505) do
+
+  create_table "educations", :force => true do |t|
+    t.string   "school"
+    t.string   "homepage"
+    t.date     "from"
+    t.date     "to"
+    t.boolean  "still_student"
+    t.string   "degree_no"
+    t.text     "description_no"
+    t.string   "degree_en"
+    t.text     "description_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jobs", :force => true do |t|
     t.string   "employer"

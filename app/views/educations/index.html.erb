@@ -1,0 +1,16 @@
+<div class="action-menu">
+  <%= link_to 'New Education', new_education_path, :class => "plus big button"%>
+</div>
+<h1>Educations</h1>
+<% @educations.each do |education| %>
+
+  <div class="item">
+    <div class="action-menu">
+      <%= link_to 'Show', education, :class => "primary button" %>
+      <%= link_to 'Edit', edit_education_path(education), :class => "pen button" %>
+      <%= link_to 'Destroy', education, confirm: 'Are you sure?', method: :delete, :class => "cross negative button" %>
+    </div>
+    <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "Homepage"), education.homepage %></h6>
+    <p><%= education.from %> - <%= education.still_student ? "Now":education.to %><br><%= education.degree_en %></p>
+  </div>
+<% end %>

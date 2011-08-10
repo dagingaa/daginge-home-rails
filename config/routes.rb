@@ -1,4 +1,6 @@
 DagingeHomeRails::Application.routes.draw do
+  resources :educations
+
   resources :jobs
 
   post "users" => "user#create"

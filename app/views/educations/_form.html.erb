@@ -1,0 +1,59 @@
+<%= form_for(@education, :html => { :class => "yform columnar" }) do |f| %>
+  <% if @education.errors.any? %>
+    <div id="error_explanation" class="error">
+      <h2><%= pluralize(@education.errors.count, "error") %> prohibited this education from being saved:</h2>
+
+      <ul>
+        <% @education.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>Common</legend>
+    <div class="type-text_field">
+      <%= f.label :school %><br />
+      <%= f.text_field :school %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :homepage %><br />
+      <%= f.text_field :homepage %>
+    </div>
+    <div class="type-date_select">
+      <%= f.label :from %><br />
+      <%= f.date_select :from %>
+    </div>
+    <div class="type-date_select">
+      <%= f.label :to %><br />
+      <%= f.date_select :to %>
+      <%= f.label :still_student %>
+      <%= f.check_box :still_student %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Norwegian</legend>
+    <div class="type-text_field">
+      <%= f.label :degree_no %><br />
+      <%= f.text_field :degree_no %>
+    </div>
+    <div class="type-text_area">
+      <%= f.label :description_no %><br />
+      <%= f.text_area :description_no %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>English</legend>
+    <div class="type-text_field">
+      <%= f.label :degree_en %><br />
+      <%= f.text_field :degree_en %>
+    </div>
+    <div class="type-text_area">
+      <%= f.label :description_en %><br />
+      <%= f.text_area :description_en %>
+    </div>
+  </fieldset>
+  <div class="type-button">
+    <%= f.submit :class => "submit" %>
+  </div>
+<% end %>

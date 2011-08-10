@@ -1,5 +1,5 @@
 <div class="action-menu">
-  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, <%= :class => "plus big button"%>%>
+  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, :class => "plus big button"%>
 </div>
 <h1><%= plural_table_name %></h1>
 
@@ -18,9 +18,9 @@
       <% attributes.each do |attribute| -%>
         <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
       <% end -%>
-      <td><%%= link_to 'Show', <%= singular_table_name %>, <%= :class => "primary button" %> %></td>
-      <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= :class => "pen button" %> %></td>
-      <td><%%= link_to 'Destroy', <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %>, <%= :class => "cross negative button" %> %></td>
+      <td><%%= link_to 'Show', <%= singular_table_name %>, :class => "primary button" %></td>
+      <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "pen button" %></td>
+      <td><%%= link_to 'Destroy', <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %>, :class => "cross negative button" %></td>
     </tr>
   <%% end %>
 </table>
