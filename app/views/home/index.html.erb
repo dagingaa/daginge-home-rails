@@ -1,97 +1,78 @@
-<h1 class="fancy">Dag-Inge Aas</h1>
-<h2>Introduction</h2>
+<div class="action-menu"><%= link_to 'Edit', edit_user_path(@user), :class => "pen button" %></div>
+<h1 class="fancy"><%= @user.name %></h1>
+<h2><%= t('generic.introduction') %></h2>
 <p>
-I am a Computer Science Major at the Norwegian University of Science and Technology in Trondheim. I was born and raised in Ålesund, which is located at the west coast of Norway. In my spare time I enjoy socializing and engaging in volunteer work. I also build and maintain web applications, some of which you can check out under 'resources' below. If you have any questions, don't hesitate to contact me.
+<%= @user.about_en %>
 </p>
-<h2>About me</h2>
+<h2><%= t('generic.aboutme')%></h2>
 <table class="about">
   <tbody>
     <tr>
-      <th>Field of Study</th>
+      <th><%= t("generic.field_of_study") %></th>
       <td><a href="http://www.ntnu.edu/studies/mtdt">Master in Computer Science</a></td>
     </tr>
     <tr>
-      <th>Work</th>
+      <th><div class="action-menu"><%= link_to 'Edit', jobs_path, :class => "pen button" %></div><%= t("generic.work") %> </th>
       <td>
         <% @jobs.each do |job| %>
           <div class="hoverable">
             <h6><%= job.employer %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), job.homepage %></h6>
-          <p><%= job.from.strftime("%b %Y") %> - <%= job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
-          <p class="hideable hide"><%= format(job.description_en) %></p>
-        </div>
-      <% end %>
-    </td>
-  </tr>
-  <tr>
-    <th>Education</th>
-    <td>
-      <% @educations.each do |education| %>
-      <div class="hoverable">
-        <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), education.homepage %></h6>
-        <p><%= education.from.strftime("%Y")%> - <%= education.still_student ? "Now":education.to.strftime("%Y") %><br><%= education.degree_en %></p>
-        <p class="hideable hide"><%= education.description_en %></p>
-      </div>
-    <% end %>
-    </td>
-  </tr>
-  <tr>
-    <th>Volunteer work</th>
-    <td>
-      <div class="hoverable">
-        <h6>ISFiT 2011 <a href="http://www.isfit.org"><img src="images/icons/house_link.png" alt="link"></a></h6>
-        <p>2010 - 2011<br>Head of IT development</p>
-        <p class="hideable hide">Project manager for the biggest new IT project of ISFiT 2011. Held meetings, workshops and demonstrations, gathered requirement specification from the different affected parties and maintaned the project after launch. Led a group of 3 other developers from start to finish to maintenance. Programming was mainly focused on Ruby on Rails and scripting using Ruby. Some of our core technologies include LDAP, MySQL, UNIX, Apache, Passenger, capistrano and more.</p>
-      </div>
-      <div class="hoverable">
-        <h6>XCom'11 <a href="http://www.xcom11.no"><img src="images/icons/house_link.png" alt="link"></a></h6>
-        <p>2010 - 2012<br>Tour responsible for trip to Japan</p>
-        <p class="hideable hide">Responsible for the contact with the travel agency. Also did crisis management when the trip got cancelled due to an earthquake in Japan followed by a nuclear crisis.</p>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <th>Skills</th>
-    <td>
-      <ul>
-        <li>Java - 3 years</li>
-        <li>Ruby on Rails - 2 years</li>
-        <li>Ruby - 2 years</li>
-        <li>Unix - 2 years</li>
-        <li>HTML(5) and CSS(3)</li>
-        <li>Git and Subversion - 2 years</li>
-        <li>Android -  &lt;1 year</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <th>Resources</th>
-    <td>
-      <h6><a href="http://github.com/dagingaa">GitHub</a></h6>
-      <p>Personal GitHub account containing some of my most recent projects</p>
-      <h6><a href="https://github.com/isfit/isfit-participant">isfit-participant @ GitHub</a></h6>
-      <p>ISFiT participant-web. Project manager and maintainer</p>
-    </td>
-  </tr>
+            <p><%= job.from.strftime("%b %Y") %> - <%= job.still_employed ? "Now":job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
+            <p class="hideable hide"><%= format(job.description_en) %></p>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t("generic.education") %> <div class="action-menu"><%= link_to 'Edit', educations_path, :class => "pen button" %></div></th>
+      <td>
+        <% @educations.each do |education| %>
+          <div class="hoverable">
+            <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), education.homepage %></h6>
+            <p><%= education.from.strftime("%Y")%> - <%= education.still_student ? "Now":education.to.strftime("%Y") %><br><%= education.degree_en %></p>
+            <p class="hideable hide"><%= education.description_en %></p>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th><div class="action-menu"><%= link_to 'Edit', volunteer_jobs_path, :class => "pen button" %></div><%= t("generic.volunteer_jobs") %> </th>
+      <td>
+        <% @volunteer_jobs.each do |job| %>
+          <div class="hoverable">
+            <h6><%= job.organization %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), job.homepage %></h6>
+            <p><%= job.from.strftime("%b %Y") %> - <%= job.still_active ? "Now":job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
+            <p class="hideable hide"><%= format(job.description_en) %></p>
+          </div>
+        <% end %>
+      </td>
 
-</tbody>
+    </tr>
+    <tr>
+      <th><%= t("generic.skills") %></th>
+      <td>
+        <ul>
+          <li>Java - 3 years</li>
+          <li>Ruby on Rails - 2 years</li>
+          <li>Ruby - 2 years</li>
+          <li>Unix - 2 years</li>
+          <li>HTML(5) and CSS(3)</li>
+          <li>Git and Subversion - 2 years</li>
+          <li>Android -  &lt;1 year</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t("generic.resources") %></th>
+      <td>
+        <h6><a href="http://github.com/dagingaa">GitHub</a></h6>
+        <p>Personal GitHub account containing some of my most recent projects</p>
+        <h6><a href="https://github.com/isfit/isfit-participant">isfit-participant @ GitHub</a></h6>
+        <p>ISFiT participant-web. Project manager and maintainer</p>
+      </td>
+    </tr>
+
+  </tbody>
 </table>
 <% content_for :sidebar do %>
-  <!--
-  <div class="widget">
-    <div class="center">
-      <img src="http://daginge.com/images/gurutjenesten.jpg" alt="Dag-Inge Aas" class="fancy">
-    </div>
-  </div>
-  -->
-  <div class="widget">
-    <h1>Contact</h1>
-    <p>You can contact me by checking out my <a href="http://www.facebook.com/dagingeaas">Facebook</a>, <a href="http://www.twitter.com/daginge">Twitter</a> or <a href="http://www.linkedin.com/pub/dag-inge-aas/19/76b/294">LinkedIn</a> profile or by sending me an email to daginge [at] gmail.com.</p>
-    <p>You can also reach me at my university address: dagingaa [at] stud.ntnu.no</p>
-    <a href="http://twitter.com/daginge" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false">Follow @daginge</a>
-    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-  </div>
-  <div class="widget">
-    <h1>Under development</h1>
-    <p>daginge.com is still being developed. For now it only contains a digital resumé, but check back later for interesting posts, past and current projects, contact information and more!</p>
-  </div>
 <% end %>

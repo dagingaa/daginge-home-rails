@@ -1,0 +1,18 @@
+<div class="action-menu">
+  <%= link_to 'New Volunteer job', new_volunteer_job_path, :class => "plus big button"%>
+</div>
+<h1>Volunteer jobs</h1>
+  <% @volunteer_jobs.each do |job| %>
+  <div id="item<%= job.id %>" class="item">
+    <div class="action-menu">
+      <%= link_to "Show", job, :class => "primary button" %>
+      <%= link_to 'Edit', edit_volunteer_job_path(job), :class => "button" %>
+      <%= link_to 'Destroy', job, :id => "delete"+ job.id.to_s, confirm: 'Are you sure?', method: :delete, :class => " delete negative button" %>
+    </div>
+
+    <h6><%= job.organization %> <%= link_to image_tag("icons/house_link.png", :alt => "Homepage"), job.homepage %></h6>
+    <p><%= job.from %> - <%= job.still_active ? "Now":job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
+  </div>
+  <% end %>
+</table>
+

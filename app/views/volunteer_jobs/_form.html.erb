@@ -1,0 +1,55 @@
+<%= form_for(@volunteer_job, :html => { :class => "yform columnar" }) do |f| %>
+  <% if @volunteer_job.errors.any? %>
+    <div id="error_explanation" class="error">
+      <h2><%= pluralize(@volunteer_job.errors.count, "error") %> prohibited this volunteer_job from being saved:</h2>
+
+      <ul>
+        <% @volunteer_job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>volunteer_job</legend>
+    <div class="type-text_field">
+      <%= f.label :organization %><br />
+      <%= f.text_field :organization %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :homepage %><br />
+      <%= f.text_field :homepage %>
+    </div>
+    <div class="type-date_select">
+      <%= f.label :from %><br />
+      <%= f.date_select :from %>
+    </div>
+    <div class="type-date_select">
+      <%= f.label :to %><br />
+      <%= f.date_select :to %>
+    </div>
+    <div class="type-check_box">
+      <%= f.label :still_active %><br />
+      <%= f.check_box :still_active %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :title_no %><br />
+      <%= f.text_field :title_no %>
+    </div>
+    <div class="type-text_area">
+      <%= f.label :description_no %><br />
+      <%= f.text_area :description_no %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :title_en %><br />
+      <%= f.text_field :title_en %>
+    </div>
+    <div class="type-text_area">
+      <%= f.label :description_en %><br />
+      <%= f.text_area :description_en %>
+    </div>
+  </fieldset>
+  <div class="type-button">
+    <%= f.submit :class => "submit" %>
+  </div>
+<% end %>

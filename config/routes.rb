@@ -1,9 +1,17 @@
 DagingeHomeRails::Application.routes.draw do
+  resources :volunteer_jobs
+
   resources :educations
 
   resources :jobs
 
+  resources :users
+
   post "users" => "user#create"
+  
+  get "users/edit/:id" => "user#edit"
+
+  put "user/:id" => "user#update"
 
   get "user/new"
 

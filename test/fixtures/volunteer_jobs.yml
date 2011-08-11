@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  organization: MyString
+  from: 2011-08-11
+  to: 2011-08-11
+  still_active: false
+  title_no: MyString
+  description_no: MyText
+  title_en: MyString
+  description_en: MyText
+
+two:
+  organization: MyString
+  from: 2011-08-11
+  to: 2011-08-11
+  still_active: false
+  title_no: MyString
+  description_no: MyText
+  title_en: MyString
+  description_en: MyText

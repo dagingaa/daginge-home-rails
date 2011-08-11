@@ -1,0 +1,35 @@
+<%= form_for(@user, :html => { :class => "yform columnar" }) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation" class="error">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend><%= t('common') %></legend>
+    <div class="type-text_field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Norwegian</legend>
+    <div class="type-text_field">
+      <%= f.label :about_no %><br />
+      <%= f.text_area :about_no %>
+    </div>
+ </fieldset>
+  <fieldset>
+    <legend>English</legend>
+    <div class="type-text_field">
+      <%= f.label :about_en %><br />
+      <%= f.text_area :about_en %>
+    </div>
+  </fieldset>
+  <%= f.submit :class => "primary positive button" %>
+<% end %>

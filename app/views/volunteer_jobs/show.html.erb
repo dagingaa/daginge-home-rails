@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<div class="action-menu">
+<%= link_to 'Edit', edit_volunteer_job_path(@volunteer_job), :class => "button" %>
+<%= link_to 'Back', volunteer_jobs_path, :class => "button" %>
+</div>
+  <p>
+  <b>Organization:</b>
+  <%= @volunteer_job.organization %>
+  </p>
+
+  <p>
+  <b>Homepage:</b>
+  <%= @volunteer_job.homepage %>
+  </p>
+
+  <p>
+  <b>From:</b>
+  <%= @volunteer_job.from %>
+  </p>
+
+  <p>
+  <b>To:</b>
+  <%= @volunteer_job.to %>
+  </p>
+
+  <p>
+  <b>Still active:</b>
+  <%= @volunteer_job.still_active %>
+  </p>
+
+  <p>
+  <b>Title no:</b>
+  <%= @volunteer_job.title_no %>
+  </p>
+
+  <p>
+  <b>Description no:</b>
+  <%= @volunteer_job.description_no %>
+  </p>
+
+  <p>
+  <b>Title en:</b>
+  <%= @volunteer_job.title_en %>
+  </p>
+
+  <p>
+  <b>Description en:</b>
+  <%= @volunteer_job.description_en %>
+  </p>
+
+

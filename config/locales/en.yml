@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  generic:
+    aboutme: About me
+    introduction: Introduction
+    field_of_study: Field of Study
+    work: Work
+    education: Education
+    volunteer_work: Volunteer work
+    skills: Skills
+    resources: Resources
+    contact: Contact
+    under_development: Under development
