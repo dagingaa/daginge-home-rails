@@ -26,20 +26,33 @@
      <h1 id="header">daginge.com</h1>
      <ul>
        <li><a href="/">Information</a></li>
+       <% if current_user and current_user.admin? %>
+         <li><%= link_to 'Me', edit_user_path(current_user) %></li>
+         <li><%= link_to 'Job', jobs_path %></li>
+         <li><%= link_to 'Education', educations_path %></li>
+         <li><%= link_to 'Volunteer', volunteer_jobs_path %></li>
+       <% end %>
        <li><a id="whereami" href="#where_am_i">Where am I?</a></li>
      </ul>
+     <div class="action-menu">
+       <% unless current_user %>
+         <%= link_to 'Login', sessions_login_path, :class => "button" %>
+       <% else %>
+         <%= link_to 'Log out', sessions_destroy_path, :class => "button" %>
+       <% end %>
+     </div>
      </header>
 
 
      <div class="container top">
        <div class="span-24">
-       <% if notice %>
-         <p class="success"><%= image_tag('icons/accept.png') %> <%= notice %></p>
-       <% end %>
-       <% if alert %>
-         <p class="error"><%= alert %></p>
-       <% end %>
-     </div>
+         <% if notice %>
+           <p class="success"><%= image_tag('icons/accept.png') %> <%= notice %></p>
+         <% end %>
+         <% if alert %>
+           <p class="error"><%= alert %></p>
+         <% end %>
+       </div>
        <div class="span-16">
          <div class="post">
            <%= yield %>

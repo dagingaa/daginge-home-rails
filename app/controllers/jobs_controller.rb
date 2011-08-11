@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  load_and_authorize_resource
   # GET /jobs
   # GET /jobs.json
   def index

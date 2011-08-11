@@ -12,6 +12,12 @@ gem 'compass', git: 'https://github.com/chriseppstein/compass.git', branch: 'rai
 # Syntax and markdown
 gem 'redcarpet'
 
+# Authorixation
+gem 'cancan'
+
+# Database
+gem 'mysql'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

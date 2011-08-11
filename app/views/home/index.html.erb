@@ -1,4 +1,3 @@
-<div class="action-menu"><%= link_to 'Edit', edit_user_path(@user), :class => "pen button" %></div>
 <h1 class="fancy"><%= @user.name %></h1>
 <h2><%= t('generic.introduction') %></h2>
 <p>
@@ -12,7 +11,7 @@
       <td><a href="http://www.ntnu.edu/studies/mtdt">Master in Computer Science</a></td>
     </tr>
     <tr>
-      <th><div class="action-menu"><%= link_to 'Edit', jobs_path, :class => "pen button" %></div><%= t("generic.work") %> </th>
+      <th><%= t("generic.work") %> </th>
       <td>
         <% @jobs.each do |job| %>
           <div class="hoverable">
@@ -24,7 +23,7 @@
       </td>
     </tr>
     <tr>
-      <th><%= t("generic.education") %> <div class="action-menu"><%= link_to 'Edit', educations_path, :class => "pen button" %></div></th>
+      <th><%= t("generic.education") %></th>
       <td>
         <% @educations.each do |education| %>
           <div class="hoverable">
@@ -36,7 +35,7 @@
       </td>
     </tr>
     <tr>
-      <th><div class="action-menu"><%= link_to 'Edit', volunteer_jobs_path, :class => "pen button" %></div><%= t("generic.volunteer_jobs") %> </th>
+      <th><%= t("generic.volunteer_jobs") %> </th>
       <td>
         <% @volunteer_jobs.each do |job| %>
           <div class="hoverable">

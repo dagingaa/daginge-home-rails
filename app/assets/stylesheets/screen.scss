@@ -185,3 +185,9 @@ div.item {
 div.action-menu {
   float:right;
 }
+header div.action-menu {
+  margin: 0.9em 1em auto auto;
+  a:visited {
+    color: black;
+  }
+}
