@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     @educations = Education.all
     @volunteer_jobs = VolunteerJob.all
     @user = User.find(1)
+    @resources = Resource.all
   end
 
 end

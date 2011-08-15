@@ -1,4 +1,6 @@
 DagingeHomeRails::Application.routes.draw do
+  resources :resources
+
   resources :volunteer_jobs
 
   resources :educations

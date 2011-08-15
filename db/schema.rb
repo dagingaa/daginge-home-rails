@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811112150) do
+ActiveRecord::Schema.define(:version => 20110815110020) do
 
   create_table "educations", :force => true do |t|
     t.string   "school"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20110811112150) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "still_employed"
+  end
+
+  create_table "resources", :force => true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.string   "description_en"
+    t.string   "description_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

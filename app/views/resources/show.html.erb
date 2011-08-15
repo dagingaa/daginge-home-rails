@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="action-menu">
+<%= link_to 'Edit', edit_resource_path(@resource), :class => "button" %>
+<%= link_to 'Back', resources_path, :class => "button" %>
+</div>
+  <p>
+  <b>Title:</b>
+  <%= @resource.title %>
+  </p>
+
+  <p>
+  <b>Link:</b>
+  <%= @resource.link %>
+  </p>
+
+  <p>
+  <b>Description:</b>
+  <%= @resource.description_en %>
+  </p>
+
+

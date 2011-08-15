@@ -1,0 +1,35 @@
+<%= form_for(@resource, :html => { :class => "yform columnar" }) do |f| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation" class="error">
+      <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+        <% @resource.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>Resource</legend>
+    <div class="type-text_field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :link %><br />
+      <%= f.text_field :link %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :description_en %><br />
+      <%= f.text_field :description_en %>
+    </div>
+    <div class="type-text_field">
+      <%= f.label :description_no %><br />
+      <%= f.text_field :description_no %>
+    </div>
+  </fieldset>
+  <div class="type-button">
+    <%= f.submit :class => "submit" %>
+  </div>
+<% end %>

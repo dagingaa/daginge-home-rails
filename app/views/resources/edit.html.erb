@@ -1,0 +1,8 @@
+<div class="action-menu">
+  <%= link_to 'Show', @resource, confirm: 'This will cancel all changes. Are you sure?', method: :get, :class => "button" %>
+  <%= link_to 'Back', resources_path, confirm: 'This will cancel all changes. Are you sure?', method: :get , :class => "button" %>
+</div>
+<h1>Editing resource</h1>
+
+<%= render 'form' %>
+

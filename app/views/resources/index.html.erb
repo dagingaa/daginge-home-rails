@@ -1,0 +1,17 @@
+<div class="action-menu">
+  <%= link_to 'New Resource', new_resource_path, :class => "plus big button"%>
+</div>
+<h1>Resources</h1>
+<% @resources.each do |resource| %>
+  <div id="item<%= resource.id %>" class="item">
+    <div class="action-menu">
+      <%= link_to 'Show', resource, :class => "primary button" %></td>
+      <%= link_to 'Edit', edit_resource_path(resource), :class => "pen button" %></td>
+      <%= link_to 'Destroy', resource, confirm: 'Are you sure?', method: :delete, :class => "cross negative button" %></td>
+    </div> 
+    <h6><%= link_to resource.title, resource.link %></h6>
+    <p><%= resource.description_en %></p>
+  </div>
+<% end %>
+</table>
+

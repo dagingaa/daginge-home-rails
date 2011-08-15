@@ -1,7 +1,7 @@
 <h1 class="fancy"><%= @user.name %></h1>
 <h2><%= t('generic.introduction') %></h2>
 <p>
-<%= @user.about_en %>
+<%= format @user.about_en %>
 </p>
 <h2><%= t('generic.aboutme')%></h2>
 <table class="about">
@@ -29,7 +29,7 @@
           <div class="hoverable">
             <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), education.homepage %></h6>
             <p><%= education.from.strftime("%Y")%> - <%= education.still_student ? "Now":education.to.strftime("%Y") %><br><%= education.degree_en %></p>
-            <p class="hideable hide"><%= education.description_en %></p>
+            <p class="hideable hide"><%= format education.description_en %></p>
           </div>
         <% end %>
       </td>
@@ -64,10 +64,10 @@
     <tr>
       <th><%= t("generic.resources") %></th>
       <td>
-        <h6><a href="http://github.com/dagingaa">GitHub</a></h6>
-        <p>Personal GitHub account containing some of my most recent projects</p>
-        <h6><a href="https://github.com/isfit/isfit-participant">isfit-participant @ GitHub</a></h6>
-        <p>ISFiT participant-web. Project manager and maintainer</p>
+        <% @resources.each do |resource| %>
+          <h6><%= link_to resource.title, resource.link %></h6>
+          <p><%= resource.description_en %></p>
+        <% end %>
       </td>
     </tr>
 
