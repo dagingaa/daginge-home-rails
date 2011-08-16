@@ -16,7 +16,7 @@ gem 'redcarpet'
 gem 'cancan'
 
 # Database
-gem 'mysql'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
