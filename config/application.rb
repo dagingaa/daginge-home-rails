@@ -39,5 +39,8 @@ module DagingeHomeRails
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    # Enable identity map
+    config.active_record.identity_map = true
   end
 end
