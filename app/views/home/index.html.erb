@@ -8,14 +8,14 @@
   <tbody>
     <tr>
       <th><%= t("generic.field_of_study") %></th>
-      <td><a href="http://www.ntnu.edu/studies/mtdt">Master in Computer Science</a></td>
+      <td><a href="http://www.ntnu.edu/studies/mtdt">Master of Science in Computer Science, 4th year</a></td>
     </tr>
     <tr>
       <th><%= t("generic.work") %> </th>
       <td>
         <% @jobs.each do |job| %>
           <div class="hoverable">
-            <h6><%= job.employer %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), job.homepage %></h6>
+            <h6><%= job.employer %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage", width: "16px", height: "16px"), job.homepage %></h6>
             <p><%= job.from.strftime("%b %Y") %> - <%= job.still_employed ? "Now":job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
             <p class="hideable hide"><%= format(job.description_en) %></p>
           </div>
@@ -27,7 +27,7 @@
       <td>
         <% @educations.each do |education| %>
           <div class="hoverable">
-            <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), education.homepage %></h6>
+            <h6><%= education.school %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage", width: "16px", height: "16px"), education.homepage %></h6>
             <p><%= education.from.strftime("%Y")%> - <%= education.still_student ? "Now":education.to.strftime("%Y") %><br><%= education.degree_en %></p>
             <p class="hideable hide"><%= format education.description_en %></p>
           </div>
@@ -39,7 +39,7 @@
       <td>
         <% @volunteer_jobs.each do |job| %>
           <div class="hoverable">
-            <h6><%= job.organization %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage"), job.homepage %></h6>
+            <h6><%= job.organization %> <%= link_to image_tag("icons/house_link.png", :alt => "homepage", width: "16px", height: "16px"), job.homepage %></h6>
             <p><%= job.from.strftime("%b %Y") %> - <%= job.still_active ? "Now":job.to.strftime("%b %Y") %><br><%= job.title_en %></p>
             <p class="hideable hide"><%= format(job.description_en) %></p>
           </div>

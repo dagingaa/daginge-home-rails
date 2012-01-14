@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', "3.1.3"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'bcrypt-ruby'
 #gem 'compass', :require => false
 gem 'compass', '~> 0.12.alpha.0'
 

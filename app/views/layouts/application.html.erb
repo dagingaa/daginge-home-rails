@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=950, initial-scale=1">
     <meta charset="utf-8" />
     <%= stylesheet_link_tag    "application" %>
-<%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
    </head>
    <body>
      <header>
@@ -34,7 +34,7 @@
      <div class="container top">
        <div class="span-24">
          <% if notice %>
-           <p class="success"><%= image_tag('icons/accept.png') %> <%= notice %></p>
+           <p class="success"><%= image_tag('icons/accept.png', width: "16px", height: "16px", alt: "accept") %> <%= notice %></p>
          <% end %>
          <% if alert %>
            <p class="error"><%= alert %></p>
@@ -55,14 +55,10 @@
            <p>You can contact me by checking out my <a href="http://www.facebook.com/dagingeaas">Facebook</a>, <a href="http://www.twitter.com/daginge">Twitter</a> or <a href="http://www.linkedin.com/pub/dag-inge-aas/19/76b/294">LinkedIn</a> profile or by sending me an email to daginge [at] gmail.com.</p>
            <p>You can also reach me at my university address: dagingaa [at] stud.ntnu.no</p>
          </div>
-         <div class="widget">
-           <h1><%= t("generic.under_development") %></h1>
-           <p>daginge.com is still being developed. For now it only contains a digital resumé, but check back later for interesting posts, past and current projects, contact information and more!</p>
-         </div>
 
        </div>
        <footer class="span-24">
-       <p class="quiet">Page built by Dag-Inge Aas using HTML5, CSS3, Compass, Blueprint, SASS and jQuery. Special thanks to famfamfam for Silk Icons and fontsquirrel for custom font. Design and colors by Dag-Inge Aas. Validates <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdaginge.com%2F">HTML5</a>. This project on <a href="https://github.com/dagingaa/daginge-home">GitHub</a>.</p>
+       <p class="quiet">Page built by Dag-Inge Aas using HTML5, CSS3, Compass, Blueprint, SASS and jQuery. Special thanks to famfamfam for Silk Icons and fontsquirrel for custom font. Design and colors by Dag-Inge Aas. Validates <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdaginge.com%2F">HTML5</a>. This project on <a href="https://github.com/dagingaa/daginge-home-rails">GitHub</a>.</p>
        </footer>
      </body>
    </html>
