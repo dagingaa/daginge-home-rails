@@ -16,12 +16,14 @@
 @include blueprint;
 
 // fonts
-@include font-face("Nobile", font-files("/fonts/nobile/nobile-webfont.woff", woff, "/fonts/nobile/nobile-webfont.ttf", truetype, "/fonts/nobile/nobile-webfont.svg", svg));
-@include font-face("Nobile Bold", font-files("/fonts/nobile/nobile_bold-webfont.woff", woff, "/fonts/nobile/nobile_bold-webfont.ttf", truetype, "/fonts/nobile/nobile_bold-webfont.svg", svg));
+//@include font-face("Nobile", font-files("/fonts/nobile/nobile-webfont.woff", woff, "/fonts/nobile/nobile-webfont.ttf", truetype, "/fonts/nobile/nobile-webfont.svg", svg));
+//@include font-face("Nobile Bold", font-files("/fonts/nobile/nobile_bold-webfont.woff", woff, "/fonts/nobile/nobile_bold-webfont.ttf", truetype, "/fonts/nobile/nobile_bold-webfont.svg", svg));
+@include font-face("Roboto", font-files("/fonts/roboto/Roboto-Regular-webfont.woff", woff, "/fonts/roboto/Roboto-Regular-webfont.ttf", truetype, "/fonts/roboto/Roboto-Regular-webfont.svg", svg));
+@include font-face("Roboto Bold", font-files("/fonts/roboto/Roboto-Bold-webfont.woff", woff, "/fonts/nobile/Roboto-Bold-webfont.ttf", truetype, "/fonts/nobile/Roboto-Bold-webfont.svg", svg));
 
 // fancy-type
 body {
-  font-family: "Nobile", Helvetica, Arial;
+  font-family: "Roboto", Helvetica, Arial;
   background-color: white;
   @include background-image(linear-gradient(darken(white,7%), white));
   background-repeat:repeat-x;
@@ -39,7 +41,7 @@ header {
 
 
 b, strong {
-  font-family: "Nobile Bold";
+  font-family: "Roboto Bold";
   font-weight: bold;
 }
 
